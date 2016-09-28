@@ -3,73 +3,176 @@
   <div class="navbar">
     <div class="navbar-inner">
       <div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
-      <div class="center">查找兼职</div>
+      <div class="center">兼职</div>
     </div>
   </div>
-  <div class="page-content">
-    <form data-search-list=".search-here" data-search-in=".item-title" class="searchbar searchbar-init">
-      <div class="searchbar-input" >
-        <input type="search" placeholder="搜索..."/><a href="#" class="searchbar-clear"></a>
-      </div>
-    </form>
-    <div class="item-input">
-                <select style="width:33%">
-                  <option>全部类别</option>
-                  <option>现金</option>
-                  <option>门票</option>
-                  <option>食宿</option>
-                  <option>特色</option>
-                  <option>宅人兼职</option>
-                  <option>短期兼职</option>
-                  <option>快结兼职</option>
-                  <option>附近兼职</option>
-                </select>
-                <select style="width:30%">
-                  <option>全城</option>
-                  <option>本市</option>
-                  <option>本区(旗)</option>
-                  <option>本县</option>
-                </select>
-                <select style="width:33%">
-                  <option>智能排序</option>
-                  <option>距离排序</option>
-                  <option>星级排序</option>
-                  <option>酬劳排序</option>
-                </select>
+
+   <div class="toolbar tabbar">
+    <div class="toolbar-inner"><a href="#tab1" class="active tab-link">旅游商家</a><a href="#tab2" class="tab-link">其他商家</a>
     </div>
-    <div class="list-block media-list sortable">
-     <ul>
-      <li><a href="#" class="item-link item-content ">
-        <div class="item-media"><img src="img/merchant/you.jpg" width="80"/></div>
-        <div class="item-inner">
-          <div class="item-title-row">
-            <div class="item-title">西贝莜面村</div>
-            <div class="item-after">食宿</div>
-          </div>
-          <div class="item-subtitle">呼和浩特市</div>
-          <div class="item-text">招聘：短期服务生</div>
-        </div></a></li>
-        <li><a href="#" class="item-link item-content">
-          <div class="item-media"><img src="img/merchant/xi.jpg" width="80"/></div>
-          <div class="item-inner">
-            <div class="item-title-row">
-              <div class="item-title">喜来登大酒店</div>
-              <div class="item-after">现金</div>
+  </div>
+
+
+   <div class="tabs-swipeable-wrap">
+      <div class="tabs">
+        <!--旅游商家  -->
+        <div id="tab1" class="page-content tab active">
+          <div class="content-block">
+           
+           <form  class="searchbar searchbar-init" style="background-color:white;">
+            <div class="searchbar-input" >
+              <input type="search" placeholder="搜索..." style="color:gray" /><a href="#" class="searchbar-clear"></a>
             </div>
-            <div class="item-subtitle">呼和浩特市</div>
-            <div class="item-text">招聘：临时客房打扫员</div>
-          </div></a></li>
-          <li><a href="#" class="item-link item-content">
-            <div class="item-media"><img src="img/merchant/kezhan.jpg" width="80" height="80"/></div>
-            <div class="item-inner">
-              <div class="item-title-row">
-                <div class="item-title">忘途客栈</div>
-                <div class="item-after">门票</div>
+          </form>
+
+          <div class="item-input">
+            <select style="width:33%">
+              <option>全部类别</option>
+              <option>现金</option>
+              <option>门票</option>
+              <option>食宿</option>
+              <option>特色</option>
+              <option>宅人兼职</option>
+              <option>短期兼职</option>
+              <option>快结兼职</option>
+              <option>附近兼职</option>
+            </select>
+            <select style="width:30%">
+              <option>全城</option>
+              <option>本市</option>
+              <option>本区(旗)</option>
+              <option>本县</option>
+            </select>
+            <select style="width:33%">
+              <option>智能排序</option>
+              <option>距离排序</option>
+              <option>星级排序</option>
+              <option>酬劳排序</option>
+            </select>
+          </div>
+          <div class="list-block media-list sortable">
+           <ul>
+            <li><a href="#" class="item-link item-content ">
+              <div class="item-media"><img src="img/merchant/you.jpg" width="80"/></div>
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title">西贝莜面村</div>
+                  <div class="item-after">食宿</div>
+                </div>
+                <div class="item-subtitle">呼和浩特市</div>
+                <div class="item-text">招聘：短期服务生</div>
+              </div></a></li>
+              <li><a href="#" class="item-link item-content">
+                <div class="item-media"><img src="img/merchant/xi.jpg" width="80"/></div>
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">喜来登大酒店</div>
+                    <div class="item-after">现金</div>
+                  </div>
+                  <div class="item-subtitle">呼和浩特市</div>
+                  <div class="item-text">招聘：临时客房打扫员</div>
+                </div></a></li>
+                <li><a href="#" class="item-link item-content">
+                  <div class="item-media"><img src="img/merchant/kezhan.jpg" width="80" height="80"/></div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">忘途客栈</div>
+                      <div class="item-after">门票</div>
+                    </div>
+                    <div class="item-subtitle">包头市</div>
+                    <div class="item-text">招聘：临时前台助手；报酬：赛罕塔拉门票</div>
+                  </div></a></li>
+                </ul>
               </div>
-              <div class="item-subtitle">包头市</div>
-              <div class="item-text">招聘：临时前台助手；报酬：赛罕塔拉门票</div>
-            </div></a></li>
-          </ul>
-        </div>
+
+          </div>
+        </div><!--旅游商家结束-->
+
+        <!-- 其他商家 -->
+        <div id="tab2" class="page-content tab">
+          <div class="content-block">
+
+            <form  class="searchbar searchbar-init" style="background-color:white;">
+            <div class="searchbar-input" >
+              <input type="search" placeholder="搜索..." style="color:gray" /><a href="#" class="searchbar-clear"></a>
+            </div>
+          </form>
+
+          <div class="item-input">
+            <select style="width:33%">
+              <option>全部类别</option>
+              <option>现金</option>
+              <option>门票</option>
+              <option>食宿</option>
+              <option>特色</option>
+              <option>宅人兼职</option>
+              <option>短期兼职</option>
+              <option>快结兼职</option>
+              <option>附近兼职</option>
+            </select>
+            <select style="width:30%">
+              <option>全城</option>
+              <option>本市</option>
+              <option>本区(旗)</option>
+              <option>本县</option>
+            </select>
+            <select style="width:33%">
+              <option>智能排序</option>
+              <option>距离排序</option>
+              <option>星级排序</option>
+              <option>酬劳排序</option>
+            </select>
+          </div>
+          <div class="list-block media-list sortable">
+           <ul>
+            <li><a href="#" class="item-link item-content ">
+              <div class="item-media"><img src="img/merchant/you.jpg" width="80"/></div>
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title">西贝莜面村</div>
+                  <div class="item-after">食宿</div>
+                </div>
+                <div class="item-subtitle">呼和浩特市</div>
+                <div class="item-text">招聘：短期服务生</div>
+              </div></a></li>
+              <li><a href="#" class="item-link item-content">
+                <div class="item-media"><img src="img/merchant/xi.jpg" width="80"/></div>
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">喜来登大酒店</div>
+                    <div class="item-after">现金</div>
+                  </div>
+                  <div class="item-subtitle">呼和浩特市</div>
+                  <div class="item-text">招聘：临时客房打扫员</div>
+                </div></a></li>
+                <li><a href="#" class="item-link item-content">
+                  <div class="item-media"><img src="img/merchant/kezhan.jpg" width="80" height="80"/></div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">忘途客栈</div>
+                      <div class="item-after">门票</div>
+                    </div>
+                    <div class="item-subtitle">包头市</div>
+                    <div class="item-text">招聘：临时前台助手；报酬：赛罕塔拉门票</div>
+                  </div></a></li>
+                </ul>
+              </div>
+
+          </div>
+        </div><!--其他商家结束-->
+
       </div>
     </div>
+
+
+  <div class="page-content">
+
+    
+
+   
+
+
+      </div>
+
+
+</div>
