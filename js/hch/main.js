@@ -230,21 +230,20 @@ function getYunElementById(className,objectId)
 }; //通过objectId获取对象
 function addRecommend(parentId,partId)  //添加推荐的兼职
 {	
-
-		var query=new AV.Query('business');
-	    query.exists('BusinessName');
- 	   query.find().then(function (results) {
+		partId="57ec09565198730056abce72";
+		var query=new AV.Query('Job');
+	    query.equalTo('objectId',partId);
+ 	    query.find().then(function (results) {
 		 var l=results.length;
-		 var Str='';
-		 for(var j=0;j<l;j++)
-		 {
-			 s=results[j].get('BusinessName');
-			 var ss=results[j].get('objectId');
+		 alert(l);
+		 var Str='0';
+			 s=results[0].get('JobContent');
+			 alert(s);
+			 var ss=results[0].get('objectId');
 			 Str=Str+s+ss+'<br />';
 			 
-			 document.getElementById('BusinessName').innerHTML=Str;
+			 document.getElementById('Recommend').innerHTML=Str;
 			// alert(results[j].get('BusinessName'));	 
-		 }
     // results 返回的就是有图片的 Todo 集合
  	 }, function (error) {
  	 });
