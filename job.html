@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	textarea{
+		width:50%;
+		height:30%;
+	}
+</style>
+</head>
+
+<body onload="getBusinessName()">
+    <h1 id="BusinessName" >下面是所有已有的商家名</h1>
+    
+	<form name="business_sign" id="Release" >
+    	<input type="text" value="商家1id"  />
+        <select id="type">
+          <option value="zhairen">宅人兼职</option>
+          <option value="fujin">附近兼职</option>
+          <option value="kuaijie">快结兼职</option>
+          <option value="duanqi">短期兼职</option>
+          <option value="xianjin">现金</option>
+          <option value="menpiao">门票</option>
+          <option value="shisu">食宿</option>
+          <option value="tese">特色</option>
+        </select>
+        <input type="text" value="工作类型" /> <br />
+        <textarea type="text" value="工作地点"  >工作地点</textarea>
+        <br />
+        <textarea type="text" value="工作内容" >工作内容</textarea> 
+        
+    </form>
+    <button onclick="Release('Release')" >发布兼职</button>
+</body>
+	<script type="text/javascript" src="js/hch/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/hch/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/hch/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/hch/jquery.session.js"></script>
+    <script type="text/javascript" src="js/hch/av-min-1.2.1.js"></script>
+    <script type="text/javascript" src="js/hch/main.js"></script>
+</html>

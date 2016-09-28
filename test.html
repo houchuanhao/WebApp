@@ -17,9 +17,10 @@
         <input type="button" onclick="sign_up('_username','_password','_email')" value="注册"/>
         
     </form>
-	<form>
+	<form id="get_child" >
     	<input type="text" id="lost_email" />
         <input type="button" onclick="PasswordReset('lost_email')" value="找回密码" />
+        <button onclick="BusinessSignUp('get_child')" > 获取子节点 </button>
     </form>
 </body>
 	<script type="text/javascript" src="js/hch/jquery-1.10.1.min.js"></script>
