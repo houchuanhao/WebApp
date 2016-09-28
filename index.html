@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="mobile-web-app-capable" content="yes">
@@ -15,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/my-app.css">
     <link rel="icon" href="img/icon.png">
   </head>
-  <body>
+  <body onLoad="addRecommend('BusinessName','57ebea2ed4f0d700516eb4aa')">
     <div class="statusbar-overlay"></div>
    <!--  <div class="panel-overlay"></div> -->
     <!-- 主视图 -->
@@ -91,41 +92,22 @@
              
             <div class="content-block-title" style="padding:0px;margin-top:0px"><span style="color:red">❤</span>为您推荐</div>
               <div class="list-block media-list ">
-                <ul>
-                  <li>
-                    <a href="work-introduce.html" class="item-link item-content ">
-                      <div class="item-media"><img src="img/merchant/you.jpg" width="80"/></div>
-                      <div class="item-inner">
-                      <div class="item-title-row">
-                        <div class="item-title">西贝莜面村</div>
-                        <div class="item-after">食宿</div>
-                      </div>
-                      <div class="item-subtitle">呼和浩特市</div>
-                      <div class="item-text">招聘：短期服务生</div>
-                    </div>
-                    </a>
-                  </li>
-                    <li><a href="#" class="item-link item-content">
-                      <div class="item-media"><img src="img/merchant/xi.jpg" width="80"/></div>
-                      <div class="item-inner">
-                        <div class="item-title-row">
-                          <div class="item-title">喜来登大酒店</div>
-                          <div class="item-after">现金</div>
-                        </div>
-                        <div class="item-subtitle">呼和浩特市</div>
-                        <div class="item-text">招聘：临时客房打扫员</div>
-                      </div></a></li>
-                      <li><a href="#" class="item-link item-content">
-                        <div class="item-media"><img src="img/merchant/kezhan.jpg" width="80" height="80"/></div>
-                        <div class="item-inner">
-                          <div class="item-title-row">
-                            <div class="item-title">忘途客栈</div>
-                            <div class="item-after">门票</div>
-                          </div>
-                          <div class="item-subtitle">包头市</div>
-                          <div class="item-text">招聘：临时前台助手；报酬：赛罕塔拉门票</div>
-                        </div></a></li>
-                      </ul>
+                <ul id="BusinessName">
+                <!---
+                      <li><a href="work-introduce.html" class="item-link item-content ">
+                            <div class="item-media"><img src="img/merchant/you.jpg" width="80"/></div>
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                <div class="item-title">西贝莜面村</div>
+                                <div class="item-after">食宿</div>
+                              </div>
+                              <div class="item-subtitle">呼和浩特市</div>
+                              <div class="item-text">招聘：短期服务生</div>
+                            </div>
+                           </a>
+                     </li>
+                     --->
+                </ul>
                     </div> <!-- 推荐列表结束 -->
             </div> <!--主页面内容页面结束-->
 
@@ -156,10 +138,13 @@
         </div><!-- 底部工具栏结束 -->
       </div>
     </div>
+    <script type="text/javascript" src="js/hch/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/hch/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="js/hch/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/hch/jquery.session.js"></script>
+    <script type="text/javascript" src="js/hch/av-min-1.2.1.js"></script>
+    <script type="text/javascript" src="js/hch/main.js"></script>
     <script type="text/javascript" src="build/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
-    <script type="text/javascript" src="js/hch/main.js"></script>
-    <script type="text/javascript" src="js/hch/main.js"></script>
   </body>
 </html>

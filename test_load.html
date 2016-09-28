@@ -1,14 +1,23 @@
+﻿<!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript">
-function load()
-{
-  alert("hello");
-}
+<body>
+
+<div id="div1">
+<p id="p1">这是一个段落。</p>
+<p id="p2">这是另一个段落。</p>
+</div>
+
+<script>
+var para=document.createElement("p");
+var para1=document.createElement("p");
+var node=document.createTextNode("这是新段落。");
+var node1=document.createTextNode("这是新段11111111111落。");
+para.appendChild(node);
+para1.appendChild(node1);
+var element=document.getElementById("div1");
+element.appendChild(para);
+element.appendChild(para1);
 </script>
-</head>
 
-<body onload="load()">
 </body>
-
 </html>

@@ -6,9 +6,9 @@ AV.init({
 	 appKey: APP_KEY
 	});
 function sign_up(username_id,password_id,email_id){   //注册
-	var username=$("#"+username_id).val();
-	var password=$("#"+password_id).val();
-	var email=$("#"+email_id).val();
+	var username=$('#'+username_id).val();
+	var password=$('#'+password_id).val();
+	var email=$('#'+email_id).val();
 	//alert(username+password+email);
 	// 初始化
   var user = new AV.User();
@@ -21,38 +21,38 @@ function sign_up(username_id,password_id,email_id){   //注册
   user.setEmail(email);
   user.signUp().then(function (loginedUser) {
       console.log(loginedUser);
-	  alert("注册成功");
+	  alert('注册成功');
   }, (function (error) {
-	  alert("注册失败");
+	  alert('注册失败');
   }));
 	
 }
 
 function logIn(username_id,password_id)  //登录
 {
-	var username=$("#"+username_id).val();
-	var password=$("#"+password_id).val();
+	var username=$('#'+username_id).val();
+	var password=$('#'+password_id).val();
 	AV.init({
 	  appId: APP_ID,
 	  appKey: APP_KEY
 	});
 	AV.User.logIn(username, password).then(function (loginedUser) {
     console.log(loginedUser);
-	alert("登录成功");
+	alert('登录成功');
    }, function (error) {
-	   alert("登录失败");
+	   alert('登录失败');
    });
 	
 }
 function PasswordReset(email_id)  //重置密码
 {
-	//alert("正在找回密码");
-	var email=$("#"+email_id).val();
+	//alert('正在找回密码');
+	var email=$('#'+email_id).val();
 	alert(email);
 	 AV.User.requestPasswordReset(email).then(function (success) {
-		 alert("我们已将找回密码方式发送至您的邮箱，请注意查收"+email);
+		 alert('我们已将找回密码方式发送至您的邮箱，请注意查收'+email);
   	 }, function (error) {
-		 alert("找回密码失败");
+		 alert('找回密码失败');
  	 });
 }
 function BusinessSignUp(FormId)
@@ -65,7 +65,7 @@ function BusinessSignUp(FormId)
 	*/
 	var business=AV.Object.extend('business');
 	var Business =new business();
-	var chils=$("#"+FormId).children('input');
+	var chils=$('#'+FormId).children('input');
 	/*
 	alert(chils.length);
 	alert(chils);
@@ -77,7 +77,7 @@ function BusinessSignUp(FormId)
 	*/
 	//名称 联系方式 地址 介绍  logo
 	//var Business=new AV.business;
-	var BForm=new Array("BusinessName","BusinessPhoneNumber","address","introduction");
+	var BForm=new Array('BusinessName','BusinessPhoneNumber','address','introduction');
 	for(var i=0;i<=3;i++)
 	{
 		Business.set(BForm[i],chils[i].value);
@@ -110,7 +110,7 @@ function BusinessSignUp(FormId)
 
 function BusinessSignUp1(FormId)
 {	
-	var UserName=$("#"+FormId+">:first"); //
+	var UserName=$('#'+FormId+'>:first'); //
 	var s=UserName.nextAll('input');
 	var user=new AV.User;
 	user.setUserName(UserName);
@@ -121,9 +121,9 @@ function BusinessSignUp1(FormId)
 	user.set('mobilePhoneNumber',s[0].value);
 	
     AV.User.requestPasswordReset(email).then(function (success) {
-		 alert("我们已将找回密码方式发送至您的邮箱，请注意查收"+email);
+		 alert('我们已将找回密码方式发送至您的邮箱，请注意查收'+email);
   	 }, function (error) {
-		 alert("找回密码失败");
+		 alert('找回密码失败');
  	 });
 	
 	alert(firstChild.val());
@@ -142,12 +142,12 @@ function getBusinessName()
 	 query.exists('BusinessName');
  	 query.find().then(function (results) {
 		 var l=results.length;
-		 var Str="";
+		 var Str='';
 		 for(var j=0;j<l;j++)
 		 {
 			 s=results[j].get('BusinessName');
 			 var ss=results[j].get('objectId');
-			 Str=Str+s+ss+"<br />";
+			 Str=Str+s+ss+'<br />';
 			 
 			 document.getElementById('BusinessName').innerHTML=Str;
 			// alert(results[j].get('BusinessName'));	 
@@ -158,7 +158,7 @@ function getBusinessName()
 }
 function Release(formId)  //发布兼职
 {
-    var chils=$("#"+formId).children('input,select,textarea');
+    var chils=$('#'+formId).children('input,select,textarea');
 	var l=chils.length;
 	/*
 	alert(l);
@@ -174,29 +174,124 @@ function Release(formId)  //发布兼职
 	query.find().then(function (results) {
 		if(results.length==0)
 		{
-			alert("商家id错误");
+			alert('商家id错误');
 		}
 		else   //已经确定商家ID正确
 		{
 				var Job=AV.Object.extend('Job');
 				var job=new Job();
-				var JArray=new Array("BusinessId","PartType","JobType","JobAddress","JobContent");
+				var JArray=new Array('BusinessId','PartType','JobType','JobAddress','JobContent');
 				//chils 顺序为 商家ID,兼职类型，工作类型，工作地点，工作内容
 				for(var i=0;i<5;i++)
 				{
 					job.set(JArray[i],chils[i].value);
 				}
 				job.save().then(function(job){
-					alert("保存成功");
+					alert('保存成功');
 					},function(error){
-						alert("保存失败");
+						alert('保存失败');
 					});
-	//	var BForm=new Array{""};
+	//	var BForm=new Array{''};
 		}
     // results 返回的就是有图片的 Todo 集合
  	 }, function (error) {
-		 alert("查询失败，请检查网络状态");
+		 alert('查询失败，请检查网络状态');
  	 });
+}
+
+
+
+
+
+
+
+function getYunElementById(className,objectId)
+{
+	var query=new AV.Query(className);
+	query.equalTo('objectId',objectId);
+	query.find().then(function (results){
+		if(results.length==0)
+		{
+			alert("getYunElementById函数未查询到对象");
+			alert(objectId);
+			return results;
+		}
+		else
+		{
+			alert("success");
+			//console.log("getYunElementById函数查询成功"+result[0].get('objectId'));
+			return result[0];
+		}
+	},function (error)
+		{
+			alert("getYunElementById查询失败");
+		});
+		//------------------------------------
+}; //通过objectId获取对象
+function addRecommend(parentId,partId)  //添加推荐的兼职
+{	
+
+		var query=new AV.Query('business');
+	    query.exists('BusinessName');
+ 	   query.find().then(function (results) {
+		 var l=results.length;
+		 var Str='';
+		 for(var j=0;j<l;j++)
+		 {
+			 s=results[j].get('BusinessName');
+			 var ss=results[j].get('objectId');
+			 Str=Str+s+ss+'<br />';
+			 
+			 document.getElementById('BusinessName').innerHTML=Str;
+			// alert(results[j].get('BusinessName'));	 
+		 }
+    // results 返回的就是有图片的 Todo 集合
+ 	 }, function (error) {
+ 	 });
+
+
+
+
+/*
+
+	var query=new AV.Query('Job');
+	query.exists('objectId',partId);
+	query.find().then(function (results){
+		if(results.length==0)
+		{
+			alert("未查询到对象");
+			//alert(objectId);
+			//return results;
+		}
+		else  //已经查询到此兼职
+		{
+			alert(results.length);
+			//console.log("getYunElementById函数查询成功"+result[0].get('objectId'));
+			//return result[0];
+			var p=results[0];
+			alert(p);
+			var BusinessId11=results.get('PartType');
+			alert(Bussiness);  
+			var JobAddress=p.get('JobAddress');
+			var PartType=p.get('PartType');
+			var JobType=p.get('JobType');
+			var business=getYunElementById("business",BusinessId);
+			var BusinessName=bussiness.get('BusinessName');
+			var url=business.get('url');
+			var parent=document.getElementById(parentId);
+			var s=parent.innerHTML;
+			var str="<li><a href='work-introduce.html' class='item-link item-content '><div class='item-media'><img src='"+url+"' width='80'/></div><div class='item-inner'><div class='item-title-row'><div class='item-title'>"+BusinessName+"</div><div class='item-after'>"+PartType+"</div></div><div class='item-subtitle'>"+JobAddress+"</div><div class='item-text'>招聘："+JobType+"</div></div></a></li>";
+			s=s+str;
+			parent.innerHTML=s;
+		}
+	},function (error)
+		{
+			alert("getYunElementById查询失败");
+		});
+		
+		//----------------------------
+	//var p=getYunElementById('Job',partId);  //获取兼职对象
+	*/
 }
 
 
