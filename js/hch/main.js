@@ -5,6 +5,7 @@ AV.init({
 	 appId: APP_ID,
 	 appKey: APP_KEY
 	});
+	var test=0;
 function sign_up(username_id,password_id,email_id){   //注册
 	var username=$('#'+username_id).val();
 	var password=$('#'+password_id).val();
@@ -21,7 +22,7 @@ function sign_up(username_id,password_id,email_id){   //注册
   user.setEmail(email);
   user.signUp().then(function (loginedUser) {
       console.log(loginedUser);
-	  alert('注册成功');
+	  alert('我们已将您的注册信息发送到您的邮箱，请前往邮箱进行验证');
   }, (function (error) {
 	  alert('注册失败');
   }));
@@ -30,12 +31,10 @@ function sign_up(username_id,password_id,email_id){   //注册
 
 function logIn(username_id,password_id)  //登录
 {
+	//alert("login");
 	var username=$('#'+username_id).val();
 	var password=$('#'+password_id).val();
-	AV.init({
-	  appId: APP_ID,
-	  appKey: APP_KEY
-	});
+	alert("用户名"+username+"    密码"+password);
 	AV.User.logIn(username, password).then(function (loginedUser) {
     console.log(loginedUser);
 	alert('登录成功');
@@ -43,6 +42,11 @@ function logIn(username_id,password_id)  //登录
 	   alert('登录失败');
    });
 	
+}
+function logOut()  //登出
+{
+	alert("登出");
+	 AV.User.logOut();
 }
 function PasswordReset(email_id)  //重置密码
 {
@@ -200,49 +204,43 @@ function Release(formId)  //发布兼职
 }
 
 
-
-
-
-
-
-function getYunElementById(className,objectId)
+function partTimeJobSelect(JobId,BusinessId)
 {
-	var query=new AV.Query(className);
-	query.equalTo('objectId',objectId);
-	query.find().then(function (results){
-		if(results.length==0)
-		{
-			alert("getYunElementById函数未查询到对象");
-			alert(objectId);
-			return results;
-		}
-		else
-		{
-			alert("success");
-			//console.log("getYunElementById函数查询成功"+result[0].get('objectId'));
-			return result[0];
-		}
-	},function (error)
-		{
-			alert("getYunElementById查询失败");
-		});
-		//------------------------------------
-}; //通过objectId获取对象
-function addRecommend(parentId,partId)  //添加推荐的兼职
+	
+	alert("it click");
+}
+
+function addRecommend(parentId)  //添加推荐的兼职
 {	
-		partId="57ec09565198730056abce72";
-		var query=new AV.Query('Job');
-	    query.equalTo('objectId',partId);
+ //alert("helloworld");
+		test++;
+		//alert(test);
+		var parent=document.getElementById(parentId);
+			// alert("qqq");
+    	parent.innerHTML=null;
+		//partId="57ec09565198730056abce72";
+		query=new AV.Query('Job');
+	    query.exists('objectId');
  	    query.find().then(function (results) {
 		 var l=results.length;
-		 alert(l);
-		 var Str='0';
-			 s=results[0].get('JobContent');
-			 alert(s);
-			 var ss=results[0].get('objectId');
-			 Str=Str+s+ss+'<br />';
-			 
-			 document.getElementById('Recommend').innerHTML=Str;
+		 //alert(l);
+		 for(var i=0;i<l;i++)
+		 {
+			 var Str="";
+			 var p=results[i];
+			 var BusinessName=p.get('BusinessName');
+			 var PartType=p.get('PartType'); 
+			 var JobAddress=p.get('JobAddress');
+			 var PartType=p.get('PartType');
+			 var JobType=p.get('JobType');
+			 var url=p.get('url');
+			//onClick='partTimeJobSelect('"+p.get('objectId')+"','"+p.get('BusinessId')+"')'
+			 var str="<li><a id='addDiv"+i+"' href='work-introduce.html' class='item-link item-content '><div class='item-media'><img src='"+url+"' width='80'/></div><div class='item-inner'><div class='item-title-row'><div class='item-title'>"+BusinessName+"</div><div class='item-after'>"+PartType+"</div></div><div class='item-subtitle'>"+JobAddress+"</div><div class='item-text'>招聘："+JobType+"</div></div></a></li>";
+			 parent.innerHTML=parent.innerHTML+str;
+		 }
+		 alert($("#addDiv[0]").attr('href'));
+		 
+		 //alert(Str);
 			// alert(results[j].get('BusinessName'));	 
     // results 返回的就是有图片的 Todo 集合
  	 }, function (error) {
@@ -292,13 +290,42 @@ function addRecommend(parentId,partId)  //添加推荐的兼职
 	//var p=getYunElementById('Job',partId);  //获取兼职对象
 	*/
 }
+function setHrefNull()
+{
+	var nowHref=$.cookie('hrefState');
+	alert(nowHref);
+	$("[href='"+nowHref+"']").attr('href',"");
+}
 
-
-
-
-
-
-
+function webLoad()
+{
+	
+	$(".bottom").click(function(){
+		var p=$(".bottom");
+		for(var i=0;i<p.length;i++)
+		{
+			
+		}
+		if($.cookie("hrefState")==this.id)  //当前页面
+		{
+			this.attr('href',"");
+		}
+	});
+	var currentUser = AV.User.current();  //当前用户
+	if(currentUser==null)
+	{
+		//alert("未登录");
+		
+	}
+	else  //已登录
+	{
+		$("[href='login.html']").attr('href',"user.html");
+		alert(currentUser.getUsername());
+	}
+	addRecommend('Recommend');
+	$.cookie('hrefState','index.html');
+	setHrefNull();
+}
 
 
 
