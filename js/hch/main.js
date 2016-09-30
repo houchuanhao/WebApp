@@ -202,12 +202,9 @@ function Release(formId)  //发布兼职
 		 alert('查询失败，请检查网络状态');
  	 });
 }
-
-
-function partTimeJobSelect(JobId,BusinessId)
+function test()
 {
-	
-	alert("it click");
+	alert("test");
 }
 
 function addRecommend(parentId)  //添加推荐的兼职
@@ -235,75 +232,48 @@ function addRecommend(parentId)  //添加推荐的兼职
 			 var PartType=p.get('PartType');
 			 var JobType=p.get('JobType');
 			 var url=p.get('url');
-			//onClick='partTimeJobSelect('"+p.get('objectId')+"','"+p.get('BusinessId')+"')'
-			//下面是用js添加节点
-						/*
-			var f1=document.createElement("li");
-			var f11=document.createElement("a");
-			var f111=document.createElement("div");
-			var f1111=document.createElement("img");
-			var f112=document.createElement("div");
-			var f1121=document.createElement("div");
-			var f11211=document.createElement("div");
-			var f11212=document.createElement("div");;
-			var f1122=document.createElement("div");
-			var f1123=document.createElement("div");
-			*/
-			/*
-			 <li>f1
-			    	 <a href="work-introduce.html" class="item-link item-content ">f11
-                  	 	 <div class="item-media"> f111
-						      <img src="img/merchant/you.jpg" width="80"/>  f1111
-						 </div>
-                   		 <div class="item-inner">   f112
-                    		  <div class="item-title-row">f1121
-                      		      <div class="item-title">西贝莜面村</div>f11211
-                      		      <div class="item-after">食宿</div>f11212
-                    	      </div>
-                             <div class="item-subtitle">呼和浩特市</div>f1122
-                             <div class="item-text">招聘：短期服务生</div>f1123
-                        </div>
-					 </a>
-			</li>
-			*/
-	
-			var f1=document.createElement("li");
-			var f11=document.createElement("a");
-			var f111=document.createElement("div");
-			var f1111=document.createElement("img");
-			var f112=document.createElement("div");
-			var f1121=document.createElement("div");
-			var f1122=document.createElement("div");
-			var f1123=document.createElement("div");
-			var f11211=document.createElement("div");
-			var f11212=document.createElement("div");
+			 var f1=$("<li></li>");
+			 var f11=$("<a></a>");
+			 var f111=$("<div></div>");
+			 var f1111=$("<img></img>");
+			 var f112=$("<div></div>");
+			 var f1121=$("<div></div>");
+			 var f1122=$("<div></div>");
+			 var f1123=$("<div></div>");
+			 var f11211=$("<div></div>");
+			 var f11212=$("<div></div>");
 			//alert("zzzzz");
-			f11.setAttribute('href','work-introduce.html');
-			f11.setAttribute('class','item-link item-content');
-			f111.setAttribute('class','item-media');
-			f1111.setAttribute('src',url);
-			f1111.setAttribute('width','80');
-			f112.setAttribute('class','item-inner');
-			f1121.setAttribute('class','item-title-row');
-			f11211.setAttribute('class','item-title');
-			f11211.innerHTML=BusinessName;
-			f11212.setAttribute('class','item-after');
-			f11212.innerHTML=PartType;
-			f1122.setAttribute('class','item-subtitle');
-			f1122.innerHTML=JobAddress;
-			f1123.setAttribute('class','item-text');
-			f1123.innerHTML="招聘："+JobType;
+			//f11.attr('href','work-introduce.html');
+			f11.attr('class','item-link item-content');
+			f111.attr('class','item-media');
+			f1111.attr('src',url);
+			f1111.attr('width','80');
+			f112.attr('class','item-inner');
+			f1121.attr('class','item-title-row');
+			f11211.attr('class','item-title');
+			f11211.text(BusinessName);
+			f11212.attr('class','item-after');
+			f11212.text(PartType);
+			f1122.attr('class','item-subtitle');
+			f1122.text(JobAddress);
+			f1123.attr('class','item-text');
+			f1123.text("招聘："+JobType);
 			//alert("wwwww");
-			f1121.appendChild(f11211);
-			f1121.appendChild(f11212);
-			f112.appendChild(f1121);
-			f112.appendChild(f1122);
-			f112.appendChild(f1123);
-			f111.appendChild(f1111);
-			f11.appendChild(f111);
-			f11.appendChild(f112);
-			f1.appendChild(f11);
-			document.getElementById(parentId).appendChild(f1);
+			f1121.append(f11211);
+			f1121.append(f11212);
+			f112.append(f1121);
+			f112.append(f1122);
+			f112.append(f1123);
+			f111.append(f1111);
+			f11.append(f111);
+			f11.append(f112);
+			f1.append(f11);
+			$("#"+parentId).append(f1);
+			f11.click(function (){
+				alert("hello");
+			});
+			//document.getElementById(parentId).appendChild(f1);
+			//f11.attachEvent("onclick", function (){alert('添加事件成功！')});
 			//alert("11111111111");
 		 }
 		  
